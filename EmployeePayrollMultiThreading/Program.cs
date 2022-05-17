@@ -19,6 +19,7 @@ namespace EmployeePayrollMultiThreading
             employeeDetails.Add(new EmployeeDetails { EmployeeID = 3, EmployeeName = "Vishal" });
             employeeDetails.Add(new EmployeeDetails { EmployeeID = 4, EmployeeName = "Dilip" });
 
+            //UC1
             EmployeePayrollOperations employeePayrollOperations = new EmployeePayrollOperations();
             Stopwatch stopWatch1 = new Stopwatch();
             stopWatch1.Start();
@@ -27,6 +28,7 @@ namespace EmployeePayrollMultiThreading
             Console.WriteLine("Duration without multi thread: " + stopWatch1.ElapsedMilliseconds);
             Console.WriteLine("-------------------");
 
+            //UC2
             Stopwatch stopWatch2 = new Stopwatch();
             stopWatch2.Start();
             employeePayrollOperations.AddEmployeeToPayrollWithThread(employeeDetails);
@@ -34,7 +36,6 @@ namespace EmployeePayrollMultiThreading
             Console.WriteLine("Duration with multi thread: " + stopWatch1.ElapsedMilliseconds);
             Console.WriteLine("Employee count" + employeePayrollOperations.EmployeeCount());
             Console.WriteLine("-------------------");
-
             Console.ReadLine();
         }
     }

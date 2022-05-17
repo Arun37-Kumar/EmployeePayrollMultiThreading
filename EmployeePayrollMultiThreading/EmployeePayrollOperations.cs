@@ -10,6 +10,11 @@ namespace EmployeePayrollMultiThreading
     public class EmployeePayrollOperations
     {
         public List<EmployeeDetails> employeePayrollDetailsList = new List<EmployeeDetails>();
+       
+        /// <summary>
+        /// UC1-Employee Detail Add
+        /// </summary>
+        /// <param name="employeePayrollDetailsList"></param>
         public void AddEmployeeToPayroll(List<EmployeeDetails> employeePayrollDetailsList)
         {
             employeePayrollDetailsList.ForEach(employeeData =>
@@ -32,6 +37,10 @@ namespace EmployeePayrollMultiThreading
             return this.employeePayrollDetailsList.Count;
         }
 
+        /// <summary>
+        /// UC 2 - Employee Details with Multi Threads
+        /// </summary>
+        /// <param name="employeePayrollDetailsList"></param>
         public void AddEmployeeToPayrollWithThread(List<EmployeeDetails> employeePayrollDetailsList)
         {
             employeePayrollDetailsList.ForEach(employeeData =>
@@ -45,6 +54,6 @@ namespace EmployeePayrollMultiThreading
                 thread.Start();
                 Console.WriteLine("Thread:" + thread.ManagedThreadId);
             });
-        }
+        }   
     }
 }
